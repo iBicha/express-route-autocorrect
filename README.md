@@ -25,6 +25,7 @@ app.use(routeAutocorrect([
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
+    // e.g. if req.url == '/user' then req.urlBestMatch will contain '/users'
     var err = new Error('Not Found. did you mean to go to ' + req.urlBestMatch + ' ?');
     err.status = 404;
     next(err);

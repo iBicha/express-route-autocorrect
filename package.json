@@ -1,0 +1,32 @@
+{
+  "name": "express-route-autocorrect",
+  "version": "1.0.0",
+  "description": "Autocorrect 404 routes to the best match",
+  "main": "./lib",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iBicha/express-route-autocorrect.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "autocorrect",
+    "route",
+    "redirect"
+  ],
+  "author": "Brahim Hadriche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iBicha/express-route-autocorrect/issues"
+  },
+  "homepage": "https://github.com/iBicha/express-route-autocorrect#readme",
+  "dependencies": {
+    "string-similarity": "^1.2.0"
+  }
+}

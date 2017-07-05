@@ -8,6 +8,7 @@ express-route-autocorrect should be set as the last middleware, but right before
 It will populate `req.urlBestMatch` with the best match so you can decide what to do with it.
 The middleware takes an array of routes to compare then against the request.
 ```javascript
+var urlMismatch = require('express-url-mismatch');
 //some other middlewares...
 
 app.use('/', index);
@@ -30,7 +31,7 @@ app.use(function (req, res, next) {
 // error handler view here...
 ```
 
-You can also specify to redirect option, to automatically redirect to the bestMatch
+You can also specify to redirect option, to automatically redirect to the `bestMatch`
 
 ```javascript
 app.use(urlMismatch({

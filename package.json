@@ -1,6 +1,6 @@
 {
   "name": "express-route-autocorrect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Autocorrect 404 routes to the best match",
   "main": "./lib",
   "directories": {

@@ -1,5 +1,7 @@
 # express-route-autocorrect
 
+[![npm version](https://badge.fury.io/js/express-route-autocorrect.svg)](https://badge.fury.io/js/express-route-autocorrect)
+
 Middleware that autocorrects url routes to the closest match.
 ## Install
 

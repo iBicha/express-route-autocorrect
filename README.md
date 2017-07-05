@@ -1,10 +1,12 @@
 # express-route-autocorrect
 
 Middleware that autocorrects url routes to the closest match.
+## Install
 
+    $ npm install express-route-autocorrect --save
 ## Usage
 
-express-route-autocorrect should be set as the last middleware, but right before the 404 not found error handler.
+`express-route-autocorrect` should be set as the last middleware, but right before the 404 not found error handler.
 It will populate `req.urlBestMatch` with the best match so you can decide what to do with it.
 The middleware takes an array of routes to compare then against the request.
 ```javascript

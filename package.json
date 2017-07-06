@@ -1,13 +1,13 @@
 {
   "name": "express-route-autocorrect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Autocorrect 404 routes to the best match",
   "main": "./lib",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,10 @@
   "homepage": "https://github.com/iBicha/express-route-autocorrect#readme",
   "dependencies": {
     "string-similarity": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.6"
   }
 }

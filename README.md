@@ -2,6 +2,7 @@
 
 [![NPM version](https://badge.fury.io/js/express-route-autocorrect.svg)](https://badge.fury.io/js/express-route-autocorrect)
 [![Build Status](https://api.travis-ci.org/iBicha/express-route-autocorrect.svg?branch=master)](https://travis-ci.org/iBicha/express-route-autocorrect)
+[![Coverage Status](https://coveralls.io/repos/github/iBicha/express-route-autocorrect/badge.svg?branch=master)](https://coveralls.io/github/iBicha/express-route-autocorrect?branch=master)
 
 Middleware that autocorrects url routes to the closest match.
 ## Install

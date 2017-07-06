@@ -48,7 +48,6 @@ describe('express-route-autocorrect', function () {
                 '/route1',
                 '/route2/subroute2'
             ]);
-
             var req = {url : '/routes1'}
             var res = {}
 
@@ -70,7 +69,7 @@ describe('express-route-autocorrect', function () {
 
             routeAutocorrectInstance(req, res, function () {});
             expect(redirectSpy.calledOnce).to.be.true;
-
+            expect(redirectSpy.calledWith('/route1')).to.be.true;
         });
     });
 });

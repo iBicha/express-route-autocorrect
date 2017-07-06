@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
 // error handler view here...
 ```
 
-You can also specify to redirect option, to automatically redirect to the `bestMatch`
+You can also specify to redirect option, to automatically redirect to the `urlBestMatch`
 
 ```javascript
 app.use(routeAutocorrect({

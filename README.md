@@ -50,3 +50,21 @@ app.use(routeAutocorrect({
     redirect: true
 }));
 ```
+
+If you're redirecting automatically, you have the ability to pass in a `threshold` option.
+
+This allows you to handle not-very-close "matches" by sending users to an actual 404 page.
+In the following example, a request for `/users/julie-smith` would result in a match!
+
+```javascript
+app.use(routeAutocorrect({
+    routes: [
+        '/users/jane-smith',
+        '/users/john-smith'
+    ],
+    redirect: true,
+    treshold: .99
+}));
+```
+
+But by providing a threshold, if a user made a request to `/users/julie-smith`, the best match found would not meet the requirements for automatic redirection.

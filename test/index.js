@@ -41,7 +41,6 @@ describe('express-route-autocorrect', function () {
     });
 
     describe('best match testing', function () {
-
         it('should get a correct best match', function () {
             var routeAutocorrectInstance = routeAutocorrect([
                 '/',
@@ -54,6 +53,9 @@ describe('express-route-autocorrect', function () {
             routeAutocorrectInstance(req, res, function () {});
             expect(req.urlBestMatch).to.equal('/route1');
         });
+    });
+
+    describe('without threshold option', function () {
         it('should redirect to best match', function () {
             var routeAutocorrectInstance = routeAutocorrect({
                 routes: [
@@ -70,6 +72,46 @@ describe('express-route-autocorrect', function () {
             routeAutocorrectInstance(req, res, function () {});
             expect(redirectSpy.calledOnce).to.be.true;
             expect(redirectSpy.calledWith('/route1')).to.be.true;
+        });
+    })
+
+    describe('with threshold option', function () {
+        it('should redirect if threshold met', function () {
+            var routeAutocorrectInstance = routeAutocorrect({
+                routes: [
+                    '/',
+                    '/route1',
+                    '/route2/subroute2'
+                ],
+                redirect: true,
+                threshold: .50
+            });
+            var redirectSpy = sinon.spy();
+            var req = {url : '/routes1'}
+            var res = {redirect : redirectSpy}
+
+            routeAutocorrectInstance(req, res, function () {});
+            expect(redirectSpy.calledOnce).to.be.true;
+            expect(redirectSpy.calledWith('/route1')).to.be.true;
+        });
+
+        it('should not redirect if threshold is unmet', function () {
+            var routeAutocorrectInstance = routeAutocorrect({
+                routes: [
+                    '/',
+                    '/route1',
+                    '/route2/subroute2'
+                ],
+                redirect: true,
+                threshold: .99
+            });
+            var redirectSpy = sinon.spy();
+            var req = {url : '/routes1'}
+            var res = {redirect : redirectSpy}
+
+            routeAutocorrectInstance(req, res, function () {});
+            expect(redirectSpy.calledOnce).to.be.false;
+            expect(redirectSpy.calledWith('/route1')).to.be.false;
         });
     });
 });

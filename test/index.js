@@ -99,14 +99,14 @@ describe('express-route-autocorrect', function () {
             var routeAutocorrectInstance = routeAutocorrect({
                 routes: [
                     '/',
-                    '/route1',
-                    '/route2/subroute2'
+                    '/photos/john-smith',
+                    '/photos/jane-smith'
                 ],
                 redirect: true,
                 threshold: .99
             });
             var redirectSpy = sinon.spy();
-            var req = {url : '/routes1'}
+            var req = {url : '/photos/julie-smith'}
             var res = {redirect : redirectSpy}
 
             routeAutocorrectInstance(req, res, function () {});
